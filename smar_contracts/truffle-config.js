@@ -45,7 +45,7 @@
 // const { MNEMONIC, PROJECT_ID } = process.env;
 
 const HDWalletProvider = require('@truffle/hdwallet-provider');
-const mnemonic;
+const mnemonic = 'Your Metamask Secret Phrase';
 module.exports = {
   /**
    * Networks define how you connect to your ethereum client and let you set the
@@ -66,10 +66,10 @@ module.exports = {
     //
     // development: {
     //  host: "127.0.0.1",     // Localhost (default: none)
-    //  port: 8545,            // Standard Ethereum port (default: none)
+    //  port: 7545,            // Standard Ethereum port (default: none)
     //  network_id: "*",       // Any network (default: none)
     // },
-    //
+    
     // An additional network, but with some advanced options…
     // advanced: {
     //   port: 8777,             // Custom port
@@ -83,7 +83,7 @@ module.exports = {
     // Useful for deploying to a public network.
     // Note: It's important to wrap the provider as a function to ensure truffle uses a new provider every time.
     goerli: {
-      provider: () => new HDWalletProvider(mnemonic, `https://goerli.infura.io/v3/${PROJECT_ID}`),
+      provider: () => new HDWalletProvider(mnemonic, `Your Alchemy Key`),
       network_id: 5,       // Goerli's id
       confirmations: 2,    // # of confirmations to wait between deployments. (default: 0)
       timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
@@ -139,3 +139,7 @@ module.exports = {
   //   }
   // }
 };
+
+
+
+// 0x298AE542A36cd08310c6B17b46c192bE9F6eF6Bf ----> Contract Address
