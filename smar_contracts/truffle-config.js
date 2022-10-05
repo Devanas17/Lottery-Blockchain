@@ -45,7 +45,7 @@
 // const { MNEMONIC, PROJECT_ID } = process.env;
 
 const HDWalletProvider = require('@truffle/hdwallet-provider');
-const mnemonic = 'Your Metamask Secret Phrase';
+const mnemonic = 'Your MetaMask secret phrase';
 module.exports = {
   /**
    * Networks define how you connect to your ethereum client and let you set the
@@ -83,7 +83,7 @@ module.exports = {
     // Useful for deploying to a public network.
     // Note: It's important to wrap the provider as a function to ensure truffle uses a new provider every time.
     goerli: {
-      provider: () => new HDWalletProvider(mnemonic, `Your Alchemy Key`),
+      provider: () => new HDWalletProvider(mnemonic, `Your Alchemy goerli Key`),
       network_id: 5,       // Goerli's id
       confirmations: 2,    // # of confirmations to wait between deployments. (default: 0)
       timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
