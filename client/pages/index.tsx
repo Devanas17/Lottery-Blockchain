@@ -5,10 +5,27 @@ import Header from '../components/Header'
 import {useContext} from "react"
 import {TransactionContext} from "../context/TransactionContext"
 import Loggin from '../components/Loggin'
+import Retro from "../assets/retro.jpg"
+import  PropagateLoader  from 'react-spinners/PropagateLoader'
+
 
 const Home: NextPage = () => {
-  const {currentAccount} = useContext(TransactionContext)
+  const {currentAccount, isLoading} = useContext(TransactionContext)
 
+  
+  if(isLoading)
+  return(
+    <div className="bg-[#091818] h-screen flex flex-col items-center justify-center">
+      <div className=" flex items-center space-x-2 mb-10">
+      <Image src={Retro} className="rounded-full" height={40} width={40} />
+      <h1 className="text-lg text-white font-bold">
+        Loading with Metamask
+      </h1>
+      </div>
+      <PropagateLoader color='white' size={30} />
+    </div>
+  )
+  
   if(!currentAccount) return <Loggin />
 
   return (
