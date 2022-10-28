@@ -10,10 +10,6 @@ require("dotenv").config()
  * @type import('hardhat/config').HardhatUserConfig
  */
 
-const MAINNET_RPC_URL =
-    process.env.MAINNET_RPC_URL ||
-    process.env.ALCHEMY_MAINNET_RPC_URL ||
-    "https://eth-mainnet.alchemyapi.io/v2/your-api-key"
 const GOERLI_RPC_URL =
     process.env.GOERLI_RPC_URL || "https://eth-goerli.alchemyapi.io/v2/your-api-key"
 const POLYGON_MAINNET_RPC_URL =
@@ -31,11 +27,8 @@ module.exports = {
     defaultNetwork: "hardhat",
     networks: {
         hardhat: {
-            // // If you want to do some forking, uncomment this
-            // forking: {
-            //   url: MAINNET_RPC_URL
-            // }
             chainId: 31337,
+            blockConfirmations: 1,
         },
         localhost: {
             chainId: 31337,
@@ -49,6 +42,7 @@ module.exports = {
             saveDeployments: true,
             chainId: 5,
         },
+        /*
         mainnet: {
             url: MAINNET_RPC_URL,
             accounts: PRIVATE_KEY !== undefined ? [PRIVATE_KEY] : [],
@@ -57,13 +51,13 @@ module.exports = {
             //   },
             saveDeployments: true,
             chainId: 1,
-        },
-        polygon: {
-            url: POLYGON_MAINNET_RPC_URL,
-            accounts: PRIVATE_KEY !== undefined ? [PRIVATE_KEY] : [],
-            saveDeployments: true,
-            chainId: 137,
-        },
+        },*/
+        // polygon: {
+        //     url: POLYGON_MAINNET_RPC_URL,
+        //     accounts: PRIVATE_KEY !== undefined ? [PRIVATE_KEY] : [],
+        //     saveDeployments: true,
+        //     chainId: 137,
+        // },
     },
     etherscan: {
         // yarn hardhat verify --network <NETWORK> <CONTRACT_ADDRESS> <CONSTRUCTOR_PARAMETERS>
