@@ -81,7 +81,7 @@ contract Raffle is VRFConsumerBaseV2, AutomationCompatibleInterface {
     }
 
     /**
-     * @dev This is the function that the Chainlink Keeper nodes call
+     * @dev This is the function that the Chainlink Automation nodes call
      * they look for `upkeepNeeded` to return True.
      * the following should be true for this to return true:
      * 1. The time interval has passed between raffle runs.
